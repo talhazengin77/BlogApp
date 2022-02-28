@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BlogApp.Models.BlogModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Blog List</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        @foreach (var item in Model)
+        {
+        <div class="blog">
+            <h3 class="page-header">@item.Title</h3>
+            <p>
+                <span class="glyphicon glyphicon-time">@item.Date</span>
+            </p>
+            <hr />
+            <img class="img-responsive" src="https://picsum.photos/200/300" />
+            <hr />
+            <p>@item.Description</p>
+            <button class="btn btn-primary">More...</button>
+        </div>
+        }
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>

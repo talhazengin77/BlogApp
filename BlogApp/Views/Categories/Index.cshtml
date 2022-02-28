@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BlogApp.Models.CategoryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new {@class="btn btn-primary"})
+</p>
+<table class="table table-bordered table-hover table-responsive table-striped"  >
+    <tr>
+        <th style="width:70%">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th style="width:16%">
+            @Html.DisplayNameFor(model =>model.BlogCount)
+        </th>
+        <th style="width:175px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.BlogCount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new {@class="btn-xs btn-success"})|
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn-xs btn-primary" })|
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn-xs btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
