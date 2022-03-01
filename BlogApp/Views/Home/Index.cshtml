@@ -18,7 +18,9 @@
             <img class="img-responsive" src="https://picsum.photos/200/300" />
             <hr />
             <p>@item.Description</p>
-            <button class="btn btn-primary">More...</button>
+            @*@Html.ActionLink("More", "Details", "Blog", new {id=@blog.Id},new {@class = "btn btn-primary"})*@
+            @Html.ActionLink("More", "Details", "Blog")
+            @*<button class="btn btn-primary">More...</button>*@
         </div>
         }
     </div>

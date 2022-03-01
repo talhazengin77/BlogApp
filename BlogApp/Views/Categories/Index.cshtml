@@ -4,11 +4,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Home</h2>
+<hr />
 <p>
     @Html.ActionLink("Create New", "Create", null, new {@class="btn btn-primary"})
 </p>
+<hr/>
+
+@if (TempData["Category"]!=null )
+{
+    var category = (BlogApp.Models.Category)TempData["Category"];
+    <div class="alert alert-success">
+        <span class="glyphicon glyphicon-ok"></span>
+        <b>@category.CategoryName</b> edited. 
+    </div>
+}
+
 <table class="table table-bordered table-hover table-responsive table-striped"  >
     <tr>
         <th style="width:70%">
